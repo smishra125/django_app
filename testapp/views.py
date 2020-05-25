@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from .models import Employee
 # Create your views here.
 
 def greeting(request):
@@ -17,3 +17,9 @@ def showContact(request):
 def about(request):
     s="<h1>This is an about page</h1>"
     return HttpResponse(s)
+
+def employee_info_view(request):
+    employees=Employee.objects.all()
+    data = {'employees':employees}
+    res = render(request, 'test/employee.html', data)
+    return res

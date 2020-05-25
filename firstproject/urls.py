@@ -17,12 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from testapp import views as testapp_views
 from exam import views as exam_views
+from BRMapp import views
 from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('testapp',include('testapp.urls')),
-    url('exam', include('exam.urls'))
+    url('exam', include('exam.urls')),
+    url('BRMapp', include('BRMapp.urls'))
+
     # path('hello/', testapp_views.greeting),
     # url('^$', testapp_views.greeting),
     # url('about/', testapp_views.about),
